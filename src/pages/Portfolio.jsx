@@ -1,33 +1,38 @@
-import React from 'react'
-import "./port.css"
+import React from "react";
+import "./port.css";
 
 const Portfolio = () => {
-    function spark(event){
-            let i = document.createElement('i');
-            i.style.left = (event.pageX) + 'px';
-            i.style.top = (event.pageY) + 'px';
-            i.style.scale = `${Math.random() * 2 + 1}`;
-            i.style.setProperty('--x',getRandomTransitionValue());
-            i.style.setProperty('--y',getRandomTransitionValue());
-       
-            document.body.appendChild(i);
+  function spark(event) {
+    let i = document.createElement("i");
+    i.style.left = event.pageX + "px";
+    i.style.top = event.pageY + "px";
+    i.style.scale = `${Math.random() * 2 + 1}`;
+    i.style.setProperty("--x", getRandomTransitionValue());
+    i.style.setProperty("--y", getRandomTransitionValue());
 
-            setTimeout(() => {
-                document.body.removeChild(i);
-            },2000)
-    }
+    document.body.appendChild(i);
 
-    function getRandomTransitionValue(){
-        return `${Math.random() * 400 - 200}px`
-    }
+    setTimeout(() => {
+      document.body.removeChild(i);
+    }, 2000);
+  }
 
-    document.addEventListener('mousemove' , spark); 
+  function getRandomTransitionValue() {
+    return `${Math.random() * 400 - 200}px`;
+  }
+
+  document.addEventListener("mousemove", spark);
 
   return (
-    <div className='port-page'>
+    <div className="port-page">
+     <marquee behavior="smooth" direction="up">
+     <p>
+     🖕
+      </p>
       
+     </marquee>
     </div>
-  )
-}
+  );
+};
 
-export default Portfolio
+export default Portfolio;
